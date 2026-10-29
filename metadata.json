@@ -1,0 +1,6 @@
+{
+  "name": "ASU Conference Hall Booking System",
+  "description": "Central Conference Hall Reservation Portal for Assam Skill University with automatic instant confirmation, concurrency conflict prevention, multi-department booking, and Material Design 3.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
