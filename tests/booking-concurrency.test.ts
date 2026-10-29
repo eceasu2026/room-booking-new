@@ -34,6 +34,11 @@ async function runTestSuite() {
   }
 
   try {
+    const db = getDatabase();
+    // Clean test bookings and closures for clean idempotent test run
+    db.exec("DELETE FROM bookings");
+    db.exec("DELETE FROM closures");
+
     // 1. Initialize system if needed
     console.log('\n[TEST 1] System Setup & Authentication');
     try {

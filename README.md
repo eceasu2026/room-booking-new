@@ -132,3 +132,21 @@ WHERE hall_id = 'hall-main'
   AND end_at > :buffered_start;
 ```
 If an overlap exists, the transaction rolls back immediately with `HTTP 409 Conflict`. If clear, the booking is committed as `CONFIRMED`.
+
+---
+
+## 8. GitHub Hosting & Deployment
+
+The application includes first-class support for hosting on GitHub:
+
+1. **GitHub Pages (Free Static Hosting)**:
+   - Configured with `base: './'` in `vite.config.ts`.
+   - Automated deployment via `.github/workflows/deploy-pages.yml`.
+   - Runs in-browser persistence engine (`browserEngine.ts`) with zero backend required.
+   - Simply change **Settings** > **Pages** > **Source** to **GitHub Actions**.
+
+2. **Full-Stack Cloud Hosting from GitHub (Docker / Render / Railway)**:
+   - Includes production multi-stage `Dockerfile`.
+   - Persistent volume on `/app/data` for SQLite database.
+
+For complete step-by-step instructions, see **[GITHUB_HOSTING_GUIDE.md](./GITHUB_HOSTING_GUIDE.md)**.
